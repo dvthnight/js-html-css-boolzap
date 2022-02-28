@@ -78,16 +78,31 @@ img{
     
 }
 
-.contatto{
+.anteprima_chat_box{
     height: 80px;
     padding: 10px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .img_contatto{
     height: 60px;
     border-radius: 99999px;
     overflow: hidden;
+    width: 60px;
+}
+
+.testo_contatto{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 60px;
+}
+
+.contatto{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
