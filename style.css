@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+img{
+    height: 100%;
+}
+
+.contenitore_generale{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.sfondo_superiore{
+    height: 100px;
+    background-color: rgb(75, 136, 126);
+}
+
+.sfondo_inferiore{
+    height: calc(100% - 100px);
+    background-color: rgb(209, 214, 211);
+}
+
+.parte_principale{
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    right: 70px;
+    left: 70px;
+    height: calc(100% - 50px - 50px);
+    background-color: white;
+
+    display: flex;
+
+}
+
+.colonna_sinistra{
+    width: calc(100% / 3);
+    height: 100%;
+
+    border-right: 2px solid rgb(205, 205, 205);
+}
+
+.taglio_superiore{
+    height: 70px;
+    background-color: rgb(231, 231, 231);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.colonna_destra{
+    height: 100%;
+    width: calc((100% / 3) * 2);
+}
+
+.taglio_inferiore{
+
+}
+
+.cerca{
+    height: 50px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.lista_contatti{
+    
+}
+
+.contatto{
+    height: 80px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.img_contatto{
+    height: 60px;
+    border-radius: 99999px;
+    overflow: hidden;
+}
+
