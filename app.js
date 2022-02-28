@@ -8,6 +8,7 @@ const app = new Vue ({
 
 
         contatore : 0,
+        messaggioInserito: "",
 
         contacts: [
 
@@ -122,12 +123,29 @@ const app = new Vue ({
 
     methods: {
         controlloStatus : function(j) {
-            console.log(this.contacts[this.contatore].messages[j].status)
+            // console.log(this.contacts[this.contatore].messages[j].status)
              if(this.contacts[this.contatore].messages[j].status === "sent"){
                 return "messaggio_inviato";
              } else{
                 return "messaggio_ricevuto";
              }
+        },
+
+        aggiungiMessaggio: function(){
+
+            console.log(this.messaggioInserito)
+
+            const newObject = {
+                date: "",
+                text: this.messaggioInserito,
+                status: "sent"
+            }
+
+            if(this.messaggioInserito){
+                this.contacts[this.contatore].messages.push(newObject);
+            }
+
+            this.messaggioInserito="";
         }
     }
 })

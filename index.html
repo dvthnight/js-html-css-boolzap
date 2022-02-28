@@ -107,7 +107,7 @@
                 <div class="emoji">
                     <i class="fas fa-grin-alt"></i>
                 </div>
-                <input type="text" placeholder="Scrivi un messaggio" class="messaggio_inserito">
+                <input type="text" placeholder="Scrivi un messaggio" class="messaggio_inserito" v-model="messaggioInserito" @keyup.enter="aggiungiMessaggio">
                 <div class="vocale">
                     <i class="fas fa-microphone"></i>
                 </div>
