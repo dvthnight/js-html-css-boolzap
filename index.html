@@ -47,7 +47,7 @@
 
                 <!-- lista contatti -->
                 <ul class="lista_contatti">
-                    <li class="anteprima_chat_box" v-for="(el, i) in contacts">
+                    <li class="anteprima_chat_box" v-for="(el, i) in contacts" @click="contatore = i">
                         <div class="contatto">
                             <figure class="img_contatto">
                                 <img src="https://picsum.photos/200" alt="">

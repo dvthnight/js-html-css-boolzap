@@ -90,6 +90,7 @@ img{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .img_contatto, .img_utente{
