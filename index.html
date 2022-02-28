@@ -13,7 +13,7 @@
 <body>
     
     <!-- conntenitore generale -->
-<div class="contenitore_generale">
+<div class="contenitore_generale" id="app">
     <!-- sofndi -->
     <div class="sfondo_superiore"></div>
     <div class="sfondo_inferiore"></div>
@@ -42,18 +42,18 @@
             <!-- inferiore -->
             <div class="taglio_inferiore">
                 <div class="cerca">
-                    <input type="text" value="Cerca o inizia una nuova chat" class="input_cerca">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat" class="input_cerca">
                 </div>
 
                 <!-- lista contatti -->
                 <ul class="lista_contatti">
-                    <li class="anteprima_chat_box">
+                    <li class="anteprima_chat_box" v-for="(el, i) in contacts">
                         <div class="contatto">
                             <figure class="img_contatto">
                                 <img src="https://picsum.photos/200" alt="">
                             </figure>
                             <div class="testo_contatto">
-                                <h3 class="nome_contatto">Pinco</h3>
+                                <h3 class="nome_contatto">{{el.name}}</h3>
                                 <div class="ultimo_messaggio">Ciao sono Pallino</div>
                             </div>
                         </div>
@@ -61,57 +61,7 @@
                     </li>
                    
 
-                    <li class="anteprima_chat_box">
-                        <div class="contatto">
-                            <figure class="img_contatto">
-                                <img src="https://picsum.photos/200" alt="">
-                            </figure>
-                            <div class="testo_contatto">
-                                <h3 class="nome_contatto">Pinco</h3>
-                                <div class="ultimo_messaggio">Ciao sono Pallino</div>
-                            </div>
-                        </div>
-                        <div class="data_ultimo_messaggio">22/02/22</div>
-                    </li>
-
-                    <li class="anteprima_chat_box">
-                        <div class="contatto">
-                            <figure class="img_contatto">
-                                <img src="https://picsum.photos/200" alt="">
-                            </figure>
-                            <div class="testo_contatto">
-                                <h3 class="nome_contatto">Pinco</h3>
-                                <div class="ultimo_messaggio">Ciao sono Pallino</div>
-                            </div>
-                        </div>
-                        <div class="data_ultimo_messaggio">22/02/22</div>
-                    </li>
-
-                    <li class="anteprima_chat_box">
-                        <div class="contatto">
-                            <figure class="img_contatto">
-                                <img src="https://picsum.photos/200" alt="">
-                            </figure>
-                            <div class="testo_contatto">
-                                <h3 class="nome_contatto">Pinco</h3>
-                                <div class="ultimo_messaggio">Ciao sono Pallino</div>
-                            </div>
-                        </div>
-                        <div class="data_ultimo_messaggio">22/02/22</div>
-                    </li>
-
-                    <li class="anteprima_chat_box">
-                        <div class="contatto">
-                            <figure class="img_contatto">
-                                <img src="https://picsum.photos/200" alt="">
-                            </figure>
-                            <div class="testo_contatto">
-                                <h3 class="nome_contatto">Pinco</h3>
-                                <div class="ultimo_messaggio">Ciao sono Pallino</div>
-                            </div>
-                        </div>
-                        <div class="data_ultimo_messaggio">22/02/22</div>
-                    </li>
+                   
                 </ul>
             </div>
         </div>
@@ -141,19 +91,14 @@
             </div>
             <!-- centrale -->
             <div class="taglio_centrale">
-                <ul class="conversazione">
-                    <li class="chat_li">
-                        <div class="messaggio_ricevuto testo_conversazione_box">
-                            <div class="testo_conversazione">Ciao sono Mario</div>
+                <ul class="conversazione" v-for="(el, i) in contacts" v-if="el.active == true">
+                    <li v-for="(elemento, j) in contacts[i].messages" class=" chat_li">
+                        <div class="testo_conversazione_box" :class="controlloStatus(i,j)" >
+                            <div class="testo_conversazione">{{elemento.text}}</div>
                             <div class="ora_conversazione">15.30</div>
                         </div>
                     </li>
-                    <li>
-                        <div class="messaggio_inviato testo_conversazione_box">
-                            <div class="testo_conversazione">Ciao sono Pinco Pallino</div>
-                            <div class="ora_conversazione">15.30 </div>
-                        </div>
-                    </li class="chat_li">
+                    
                 </ul>
             </div>
 
@@ -162,7 +107,7 @@
                 <div class="emoji">
                     <i class="fas fa-grin-alt"></i>
                 </div>
-                <input type="text" value="Scrivi un messaggio" class="messaggio_inserito">
+                <input type="text" placeholder="Scrivi un messaggio" class="messaggio_inserito">
                 <div class="vocale">
                     <i class="fas fa-microphone"></i>
                 </div>
