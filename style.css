@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 li{
     list-style: none;
 }
@@ -64,7 +68,7 @@ img{
 }
 
 .taglio_inferiore{
-
+    height: calc(100% - 70px);
 }
 
 .cerca{
@@ -72,6 +76,8 @@ img{
     padding: 10px;
     display: flex;
     align-items: center;
+    background-color: rgb(249, 249, 249);
+    justify-content: center;
 }
 
 .lista_contatti{
@@ -86,7 +92,7 @@ img{
     justify-content: space-between;
 }
 
-.img_contatto{
+.img_contatto, .img_utente{
     height: 60px;
     border-radius: 99999px;
     overflow: hidden;
@@ -100,9 +106,56 @@ img{
     height: 60px;
 }
 
-.contatto{
+.contatto, .utente{
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
+.taglio_inserisci_messaggio{
+    height: 70px;
+    background-color: rgb(242, 235, 232);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.taglio_centrale{
+    height: calc(100% - 70px - 70px);
+    background-color: rgb(224, 216, 208);
+}
+
+
+.simboli_navigazione{
+    display: flex;
+    justify-content: space-around;
+    color: rgb(168, 168, 168);
+}
+
+.navigazione{
+    width: 80px;
+}
+
+.vocale, .emoji{
+    color: rgb(96, 103, 106);
+}
+
+input[type="text"]{
+    border: none;
+    height: 40px;
+    /* width: 85%; */
+    padding: 20px;
+    color: rgb(124, 124, 124);
+}
+
+.input_cerca{
+    width: 95%;
+}
+
+.messaggio{
+    width: 85%;
+}
+
+.ultimo_messaggio, .ultimo_accesso{
+    color: rgb(124, 124, 124);
+}
