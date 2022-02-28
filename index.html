@@ -69,14 +69,14 @@
         <!-- col dx -->
         <div class="colonna_destra">
             <!-- superiore -->
-            <div class="taglio_superiore">
+            <div class="taglio_superiore" v-for="(el, i) in contacts" v-if="el.active == true">
                 <div class="chat">
                     <div class="contatto">
                         <figure class="img_contatto">
                             <img src="https://picsum.photos/200" alt="">
                         </figure>
                         <div class="testo_contatto">
-                            <h3 class="nome_contatto">Pinco</h3>
+                            <h3 class="nome_contatto">{{el.name}}</h3>
                             <div class="ultimo_accesso">oggi all'ora tal dei tali</div>
                         </div>
                     </div>
