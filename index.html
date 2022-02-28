@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>BOOLZAP</title>
@@ -18,11 +18,27 @@
     <div class="parte_principale">
         <div class="colonna_sinistra">
             <div class="taglio_superiore">
-                <div class="utente">Nome</div>
-                <div class="navigazione">Simboli</div>
+                <div class="utente">
+                    
+                        <figure class="img_utente">
+                            <img src="https://picsum.photos/200" alt="">
+                        </figure>
+                        <h3 class="nome_utente">Nome</h3>
+                    
+                </div>
+                <div class="navigazione">
+                    <ul class="simboli_navigazione">
+                        <li><i class="fas fa-circle-notch"></i></li>
+                        <li><i class="fas fa-comment-alt"></i></li>
+                        <li><i class="fas fa-ellipsis-v"></i></li>
+                    </ul>
+                </div>
             </div>
             <div class="taglio_inferiore">
-                <div class="cerca"><input type="text"></div>
+                <div class="cerca">
+                    <input type="text" value="Cerca o inizia una nuova chat" class="input_cerca">
+                </div>
+                
                 <ul class="lista_contatti">
                     <li class="anteprima_chat_box">
                         <div class="contatto">
@@ -94,8 +110,37 @@
         </div>
         <div class="colonna_destra">
             <div class="taglio_superiore">
-                <div class="chat">Nome</div>
-                <div class="allegati">Simboli</div>
+                <div class="chat">
+                    <div class="contatto">
+                        <figure class="img_contatto">
+                            <img src="https://picsum.photos/200" alt="">
+                        </figure>
+                        <div class="testo_contatto">
+                            <h3 class="nome_contatto">Pinco</h3>
+                            <div class="ultimo_accesso">oggi all'ora tal dei tali</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigazione">
+                    <ul class="simboli_navigazione">
+                        <li><i class="fas fa-search"></i></li>
+                        <li><i class="fas fa-paperclip"></i></li>
+                        <li><i class="fas fa-ellipsis-v"></i></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="taglio_centrale">
+                
+            </div>
+
+            <div class="taglio_inserisci_messaggio">
+                <div class="emoji">
+                    <i class="fas fa-grin-alt"></i>
+                </div>
+                <input type="text" value="Scrivi un messaggio" class="messaggio">
+                <div class="vocale">
+                    <i class="fas fa-microphone"></i>
+                </div>
             </div>
         </div>
     </div>
