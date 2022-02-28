@@ -6,6 +6,9 @@ const app = new Vue ({
 
     data: {
 
+
+        contatore : 0,
+
         contacts: [
 
 
@@ -118,9 +121,9 @@ const app = new Vue ({
     },
 
     methods: {
-        controlloStatus : function(i,j) {
-            console.log(this.contacts[i].messages[j].status)
-             if(this.contacts[i].messages[j].status === "sent"){
+        controlloStatus : function(j) {
+            console.log(this.contacts[this.contatore].messages[j].status)
+             if(this.contacts[this.contatore].messages[j].status === "sent"){
                 return "messaggio_inviato";
              } else{
                 return "messaggio_ricevuto";
