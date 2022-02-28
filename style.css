@@ -81,7 +81,7 @@ img{
 }
 
 .lista_contatti{
-    
+
 }
 
 .anteprima_chat_box{
@@ -123,6 +123,7 @@ img{
 .taglio_centrale{
     height: calc(100% - 70px - 70px);
     background-color: rgb(224, 216, 208);
+    position: relative;
 }
 
 
@@ -152,10 +153,58 @@ input[type="text"]{
     width: 95%;
 }
 
-.messaggio{
+.messaggio_inserito{
     width: 85%;
 }
 
 .ultimo_messaggio, .ultimo_accesso{
+    color: rgb(124, 124, 124);
+}
+
+
+/* conversazione */
+
+.conversazione{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.chat_li{
+    height: 80px;
+    padding: 15px;
+}
+
+.testo_conversazione_box{
+    width: 65%;
+    border-radius: 10px;
+    position: absolute;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+.messaggio_ricevuto{
+    left: 30px;
+    background-color: white;
+}
+
+.messaggio_inviato{
+    right: 30px;
+    background-color: rgb(215, 245, 184);
+}
+
+.testo_conversazione{
+    display: flex;
+    align-items: flex-start;
+}
+
+.ora_conversazione{
+    display: flex;
+    align-items: flex-end;
+    font-size: 11px;
     color: rgb(124, 124, 124);
 }
