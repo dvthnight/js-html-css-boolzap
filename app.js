@@ -131,6 +131,17 @@ const app = new Vue ({
              }
         },
 
+        risposta: function(){
+            const newRisposta = {
+                date:"",
+                text: "ok",
+                status: "received"
+            };
+
+            this.contacts[this.contatore].messages.push(newRisposta);
+        },
+
+
         aggiungiMessaggio: function(){
 
             console.log(this.messaggioInserito)
@@ -145,7 +156,10 @@ const app = new Vue ({
                 this.contacts[this.contatore].messages.push(newObject);
             }
 
+            const mioTimeout = setTimeout(this.risposta, 1000);
+
             this.messaggioInserito="";
-        }
+        },
+
     }
 })
