@@ -168,22 +168,24 @@ input[type="text"]{
 .conversazione{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     height: 100%;
     overflow-y: scroll;
-
+    gap: 8px;
+    padding: 30px;
 }
 
 .chat_li{
     height: 80px;
     padding: 15px;
+    display: contents;
 }
 
 .testo_conversazione_box{
     width: 65%;
     border-radius: 10px;
-    position: absolute;
-    height: 50px;
+    /* position: absolute; */
+    /* height: 50px; */
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -191,18 +193,20 @@ input[type="text"]{
 }
 
 .messaggio_ricevuto{
-    left: 30px;
+    /* left: 30px; */
+    align-self: flex-start;
     background-color: white;
 }
 
 .messaggio_inviato{
-    right: 30px;
+    /* right: 30px; */
+    align-self: flex-end;
     background-color: rgb(215, 245, 184);
 }
 
 .testo_conversazione{
-    display: flex;
-    align-items: flex-start;
+    /* display: flex;
+    align-items: flex-start; */
 }
 
 .ora_conversazione{
