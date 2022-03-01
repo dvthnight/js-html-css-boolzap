@@ -170,6 +170,8 @@ input[type="text"]{
     flex-direction: column;
     flex-wrap: wrap;
     height: 100%;
+    overflow-y: scroll;
+
 }
 
 .chat_li{
