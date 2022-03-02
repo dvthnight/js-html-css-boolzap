@@ -175,7 +175,36 @@ const app = new Vue ({
         oraInvio: function(date){
             const ora = date.split(" ")[1];
             return ora.substring(0,5);
-        }
+        },
+
+        oraUltimoAccesso: function(){
+            const arrayMessaggiRicevuti= [];
+            const arrayMessaggi = this.contacts[this.contatore].messages;
+            console.log(arrayMessaggi);
+            let k = 0;
+            for(let i=0; i < arrayMessaggi.length; i++ ){
+                console.log(arrayMessaggi[i].status);
+                console.log(arrayMessaggi[i])
+
+                if(arrayMessaggi[i].status === "received"){
+                    arrayMessaggiRicevuti[k] = arrayMessaggi[i];
+                    k++;
+
+                }
+            
+
+            }
+
+            console.log(arrayMessaggiRicevuti.length);
+            
+            const posizioneUltimoMessaggio = arrayMessaggiRicevuti.length - 1;
+            console.log(posizioneUltimoMessaggio);
+
+           const dataUltimoMessaggio = arrayMessaggiRicevuti[posizioneUltimoMessaggio].date;
+           console.log(dataUltimoMessaggio);
+
+           return this.oraInvio(dataUltimoMessaggio);
+        },
 
     }
 })
