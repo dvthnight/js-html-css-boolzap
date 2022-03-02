@@ -54,10 +54,10 @@
                             </figure>
                             <div class="testo_contatto">
                                 <h3 class="nome_contatto">{{el.name}}</h3>
-                                <div class="ultimo_messaggio">Ciao sono Pallino</div>
+                                <div class="ultimo_messaggio">{{ultimoMessaggio(el.messages,i)}}</div>
                             </div>
                         </div>
-                        <div class="data_ultimo_messaggio"></div>
+                        <div class="data_ultimo_messaggio">{{ultimaData(el.messages,i)}}</div>
                     </li>
                    
 

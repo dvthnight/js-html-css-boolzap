@@ -206,5 +206,37 @@ const app = new Vue ({
            return this.oraInvio(dataUltimoMessaggio);
         },
 
+
+        datiUltimoMessaggio: function(messaggi, i){
+            const arrayMessaggiRicevuti= [];
+            k=0;
+            for(let i=0; i<messaggi.length; i++){
+                if(messaggi[i].status === "received"){
+                    arrayMessaggiRicevuti[k] = messaggi[i];
+                    k++;
+                }
+            }
+            console.log(arrayMessaggiRicevuti);
+            posizioneUltimo = arrayMessaggiRicevuti.length - 1;
+            oggettoUltimoMessaggio = arrayMessaggiRicevuti[posizioneUltimo];
+
+            return oggettoUltimoMessaggio;
+        },
+
+        ultimoMessaggio: function(messsaggi,i){
+
+            const oggettoMesssaggi = messsaggi;
+            const ultimoMessaggioRicevuto = this.datiUltimoMessaggio(oggettoMesssaggi,i);
+
+            return ultimoMessaggioRicevuto.text;
+        },
+
+        ultimaData: function(messsaggi,i){
+            const oggettoMesssaggi = messsaggi;
+
+            const ultimoMessaggioRicevuto = this.datiUltimoMessaggio(oggettoMesssaggi,i);
+            const data = ultimoMessaggioRicevuto.date.split(" ")[0];
+            return data;
+        },
     }
 })
