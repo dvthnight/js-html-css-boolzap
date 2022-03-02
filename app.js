@@ -131,35 +131,51 @@ const app = new Vue ({
              }
         },
 
-        risposta: function(){
+        risposta: function(indice){
+
+            const d = new Date();
             const newRisposta = {
-                date:"",
+                date:`${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()} ${d.getHours()}.${d.getMinutes()}.${d.getSeconds()}`,
                 text: "ok",
                 status: "received"
             };
-
-            this.contacts[this.contatore].messages.push(newRisposta);
+            
+            this.contacts[indice].messages.push(newRisposta);
         },
 
 
         aggiungiMessaggio: function(){
 
+            const d = new Date();
+
+            
+
             console.log(this.messaggioInserito)
 
             const newObject = {
-                date: "",
+                date: `${d.getDate()}/${d.getMonth()+1}/${d.getFullYear()} ${d.getHours()}.${d.getMinutes()}.${d.getSeconds()}`,
                 text: this.messaggioInserito,
                 status: "sent"
             }
 
+            const indice = this.contatore;
+
             if(this.messaggioInserito){
-                this.contacts[this.contatore].messages.push(newObject);
+                this.contacts[indice].messages.push(newObject);
             }
 
-            const mioTimeout = setTimeout(this.risposta, 1000);
+            setTimeout(()=>{
+                this.risposta(indice);
+            }, 1000);
 
             this.messaggioInserito="";
         },
+        
+
+        oraInvio: function(date){
+            const ora = date.split(" ")[1];
+            return ora.substring(0,5);
+        }
 
     }
 })
