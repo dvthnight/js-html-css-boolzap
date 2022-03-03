@@ -235,16 +235,19 @@ const app = new Vue ({
 
         ultimoMessaggio: function(messsaggi,i){
 
-            const oggettoMesssaggi = messsaggi;
-            const ultimoMessaggioRicevuto = this.datiUltimoMessaggio(oggettoMesssaggi,i);
+            // const oggettoMesssaggi = messsaggi;
+            // const ultimoMessaggioRicevuto = this.datiUltimoMessaggio(oggettoMesssaggi,i);
 
-            console.log(ultimoMessaggioRicevuto)
+            // console.log(ultimoMessaggioRicevuto)
 
-            if(ultimoMessaggioRicevuto != "NULL"){
-                return ultimoMessaggioRicevuto.text;
-            }else{
-                return " ";
-            }
+            // if(ultimoMessaggioRicevuto != "NULL"){
+            //     return ultimoMessaggioRicevuto.text;
+            // }else{
+            //     return " ";
+            // }
+
+            const posUltimoMessaggio = this.contacts[i].messages.length - 1;
+            return this.contacts[i].messages[posUltimoMessaggio].text;
         },
 
         ultimaData: function(messsaggi,i){
