@@ -95,7 +95,13 @@
                     <li v-for="(el, j) in contacts[contatore].messages" class=" chat_li">
                         <div class="testo_conversazione_box" :class="controlloStatus(j)" >
                             <div class="testo_conversazione">{{el.text}}</div>
-                            <div class="ora_conversazione">{{oraInvio(el.date)}}</div>
+                            <div class="ora_conversazione">
+                                <i id="cestino" class="far fa-trash-alt" @click="cancellaElLista(j)"></i>
+                                
+                                {{oraInvio(el.date)}}
+
+                            </div>
+
                         </div>
                     </li>
                     

@@ -211,7 +211,19 @@ input[type="text"]{
 
 .ora_conversazione{
     display: flex;
+    flex-direction: column;
     align-items: flex-end;
     font-size: 11px;
     color: rgb(124, 124, 124);
+    gap: 10px;
+}
+
+#cestino{
+    display: none;
+}
+
+.testo_conversazione_box:hover #cestino{
+    /* color: rgb(124, 124, 124); */
+    display: block;
+    cursor: pointer;
 }

@@ -195,6 +195,7 @@ const app = new Vue ({
 
             }
 
+           if(arrayMessaggiRicevuti.length != 0){
             console.log(arrayMessaggiRicevuti.length);
             
             const posizioneUltimoMessaggio = arrayMessaggiRicevuti.length - 1;
@@ -204,6 +205,9 @@ const app = new Vue ({
            console.log(dataUltimoMessaggio);
 
            return this.oraInvio(dataUltimoMessaggio);
+           }else{
+               return " ";
+           }
         },
 
 
@@ -217,10 +221,16 @@ const app = new Vue ({
                 }
             }
             console.log(arrayMessaggiRicevuti);
-            posizioneUltimo = arrayMessaggiRicevuti.length - 1;
-            oggettoUltimoMessaggio = arrayMessaggiRicevuti[posizioneUltimo];
 
-            return oggettoUltimoMessaggio;
+            if(arrayMessaggiRicevuti.length != 0){
+                posizioneUltimo = arrayMessaggiRicevuti.length - 1;
+                oggettoUltimoMessaggio = arrayMessaggiRicevuti[posizioneUltimo];
+    
+                return oggettoUltimoMessaggio;
+            }  else {
+                return "NULL";
+            }
+           
         },
 
         ultimoMessaggio: function(messsaggi,i){
@@ -228,15 +238,33 @@ const app = new Vue ({
             const oggettoMesssaggi = messsaggi;
             const ultimoMessaggioRicevuto = this.datiUltimoMessaggio(oggettoMesssaggi,i);
 
-            return ultimoMessaggioRicevuto.text;
+            console.log(ultimoMessaggioRicevuto)
+
+            if(ultimoMessaggioRicevuto != "NULL"){
+                return ultimoMessaggioRicevuto.text;
+            }else{
+                return " ";
+            }
         },
 
         ultimaData: function(messsaggi,i){
             const oggettoMesssaggi = messsaggi;
 
             const ultimoMessaggioRicevuto = this.datiUltimoMessaggio(oggettoMesssaggi,i);
-            const data = ultimoMessaggioRicevuto.date.split(" ")[0];
-            return data;
+            if(ultimoMessaggioRicevuto != "NULL"){
+                const data = ultimoMessaggioRicevuto.date.split(" ")[0];
+                return data;
+            } else{
+                return " ";
+            }
+        },
+
+        cancellaElLista : function(j){
+            this.ultimoMessaggio(this.contacts[this.contatore].messages,j);
+            this.ultimaData(this.contacts[this.contatore].messages,j);
+            
+            this.contacts[this.contatore].messages.splice(j,1);
+
         },
     }
 })
